@@ -10,6 +10,10 @@ body {
     justify-content: center;
 }
 
+button {
+    background-color: white;
+}
+
 #computer {
     height: 20vmin;
     width: 20vmin;
@@ -18,8 +22,16 @@ body {
     margin: 2vmin auto;
 }
 
+section#player-bubbles > div {
+    height: 10vmin;
+    width: 10vmin;
+    border: solid black;
+    border-radius: 50%;
+    display: inline-flex;
+    margin: 2vmin 4vmin;
+}
+
 #player-buttons > button {
     margin: 2vmin;
-    background-color: white;
 }
 
