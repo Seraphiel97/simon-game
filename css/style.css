@@ -10,8 +10,16 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Tilt Neon', cursive;
+    text-align: center;
 }
 
+h1 {
+    font-size: 4rem;
+}
+
+h5{
+    font-size: 1rem;
+}
 button {
     background-color: white;
 }
@@ -44,4 +52,12 @@ section#player-bubbles > div {
     width: 15vmin;
 }
 
-#
+#play {
+    height: 5vmin;
+    width: 20vmin;
+}
+
+#restart {
+    height: 5vmin;
+    width: 20vmin;
+}
