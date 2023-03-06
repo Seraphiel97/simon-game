@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    box-sizing: border-box;
     
 }
 
@@ -18,6 +19,7 @@ button {
     height: 20vmin;
     width: 20vmin;
     border: solid black;
+    border-width: 0.5vmin;
     border-radius: 50%;
     margin: 2vmin auto;
 }
@@ -26,6 +28,7 @@ section#player-bubbles > div {
     height: 10vmin;
     width: 10vmin;
     border: solid black;
+    border-width: 0.5vmin;
     border-radius: 50%;
     display: inline-flex;
     margin: 2vmin 4vmin;
@@ -33,5 +36,7 @@ section#player-bubbles > div {
 
 #player-buttons > button {
     margin: 2vmin;
+    height: 4vmin;
+    width: 10vmin;
 }
 
