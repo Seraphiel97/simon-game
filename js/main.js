@@ -17,21 +17,23 @@ let playerPattern;
 let winner;
 
   /*----- cached elements  -----*/
+const play = document.getElementById('play');
 const restart = document.getElementById('restart');
 const compCircle = document.getElementById('computer');
+
   /*----- event listeners -----*/
 // Create an event listener for the play button
+play.addEventListener('click', initialize);
 // Create an event listener for the play again/reset button
 restart.addEventListener('click', initialize);
 // Create an event listener for the buttons that allow the player to select a color pattern
 
   /*----- functions -----*/
-initialize();
 
 // Function that initializes/resets the game 
 function initialize() {
   makeCorrectPattern();
-
+  showCorrectPattern();
   render();
 }
 
@@ -45,11 +47,13 @@ function makeCorrectPattern() {
 
 // Function that iterates through the array, showing the colors to the player
 function showCorrectPattern() {
-  correctPattern.forEach((num) => {
+  correctPattern.forEach((num, idx) => {
     setTimeout(() => {
       compCircle.style.backgroundColor = colors[num];
-    }, 1000)
+      compCircle.innerText = idx + 1;
+    }, idx * 1000)
   })
+  setTimeout(() => compCircle.style.backgroundColor = 'white', 5000);
 }
 
 // Function that updates the array holding the player's choices

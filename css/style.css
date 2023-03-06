@@ -22,6 +22,9 @@ button {
     border-width: 0.5vmin;
     border-radius: 50%;
     margin: 2vmin auto;
+    text-align: center;
+    padding: 3rem;
+    color: white
 }
 
 section#player-bubbles > div {
