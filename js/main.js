@@ -20,6 +20,8 @@ let winner;
 const play = document.getElementById('play');
 const restart = document.getElementById('restart');
 const compCircle = document.getElementById('computer');
+const choicesNodeList = document.getElementsByClassName('choice');
+const choicesArray = Array.from(choicesNodeList);
 
   /*----- event listeners -----*/
 // Create an event listener for the play button
@@ -70,7 +72,11 @@ function render() {
 };
 // Render board function
 function renderBoard() {
-
+  choicesArray.forEach((choice, idx) => {
+    choice.style.color = colors[idx];
+    choice.style.borderStyle = 'solid';
+    choice.style.borderColor = colors[idx];
+  })
 };
 // Render controls function
 function renderControls() {
