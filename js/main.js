@@ -38,7 +38,7 @@ const undoBtn = document.getElementById('undo');
 // Create an event listener for the play button
 playBtn.addEventListener('click', beginGame);
 // Create an event listener for the play again/reset button
-restartBtn.addEventListener('click', beginGame);
+
 // Create an event listener for the buttons that allow the player to select a color pattern
 playerBtnContainer.addEventListener('click', playerSelect);
 //Create an event listener to check the correct solution versus the player's solution
@@ -104,6 +104,7 @@ function playerSelect(evt) {
   render();
 }
 
+// Function that removes the most recent player choice from playerPattern
 function removeLastChoice() {
   playerPattern.pop();
   render();
@@ -148,7 +149,6 @@ function renderBoard() {
 function renderControls() {
   if (turn === 0) {
   playBtn.style.visibility = 'visible';
-  restartBtn.style.visibility = 'hidden';
   submitBtn.style.visibility = 'hidden';
   undoBtn.style.visibility = 'hidden';
   choicesArray.forEach((choice) => choice.style.visibility = 'hidden');
@@ -158,10 +158,9 @@ function renderControls() {
   undoBtn.style.visibility = 'visible';
   choicesArray.forEach((choice) => choice.style.visibility = 'visible');
 } else if (turn === 2) {
-  playBtn.style.visibility = 'hidden';
+  playBtn.style.visibility = 'visible';
   submitBtn.style.visibility = 'hidden';
   undoBtn.style.visibility = 'hidden';
-  restartBtn.style.visibility = 'visible';
 }
 }
 

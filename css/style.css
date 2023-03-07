@@ -39,7 +39,7 @@ button {
     border-radius: 50%;
     margin: 2vmin auto;
     text-align: center;
-    padding: 3rem;
+    padding: 4rem;
     color: white
 }
 
@@ -60,17 +60,13 @@ section.player-bubbles > div {
 }
 
 #play {
+    margin: 2vmin 0;
     height: 5vmin;
     width: 20vmin;
 }
 
-#data-manipulation{
+#data-manipulation { 
     display: inline-flex;
-    height: 5vmin;
-    width: 20vmin;
-}
-
-#restart {
     height: 5vmin;
     width: 20vmin;
 }
