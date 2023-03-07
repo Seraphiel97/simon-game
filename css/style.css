@@ -20,13 +20,18 @@ h1 {
 h5{
     font-size: 1rem;
 }
+
+div {
+    font-size: 2rem;
+}
+
 button {
     background-color: white;
 }
 
 #computer {
-    height: 20vmin;
-    width: 20vmin;
+    height: 25vmin;
+    width: 25vmin;
     border: solid black;
     border-width: 0.5vmin;
     border-radius: 50%;
