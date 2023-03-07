@@ -24,6 +24,10 @@ button {
     background-color: white;
 }
 
+#player-bubbles > div {
+    
+}
+
 #computer {
     height: 20vmin;
     width: 20vmin;

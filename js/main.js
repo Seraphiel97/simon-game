@@ -69,7 +69,9 @@ function showCorrectPattern() {
   setTimeout(() => compCircle.style.backgroundColor = 'white', 5000);
 }
 
+//Callback function that begins the game and resets when invoked
 function beginGame() {
+  initialize()
   makeCorrectPattern();
   showCorrectPattern();
   turn += 1;
@@ -78,15 +80,18 @@ function beginGame() {
 
 // Function that updates the array holding the player's choices
 function playerSelect() {
-
+  playerPattern.push()
+  render();
 }
 
 // Function that compares the master pattern and player choices and declares a winner
 function checkWinner() {
   if (playerPattern === correctPattern) {
     winner = 1;
-  } else if (playerPatter !== correctPattern)
+  } else if (playerPatter !== correctPattern) {
     winner = -1;
+  }
+  render();
 }
 
 // Main render function
@@ -102,6 +107,7 @@ function renderBoard() {
     choice.style.borderStyle = 'solid';
     choice.style.borderColor = colors[idx];
   })
+  
 };
 // Render controls function
 function renderControls() {
