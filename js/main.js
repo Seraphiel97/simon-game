@@ -52,6 +52,7 @@ function initialize() {
   correctPattern = [];
   playerPattern = [];
   winner = null;
+  bubblesArray.forEach((bubble) => bubble.style.backgroundColor = 'white');
   render();
 }
 
@@ -102,6 +103,9 @@ function playerSelect(evt) {
 
 // Function that compares the correct pattern and player choices and declares a winner
 function checkWinner() {
+  if (playerPattern.length < 5) {
+    return
+  } else {
   playerPattern.forEach((num, idx) => {
     if (num === correctPattern[idx]) {
       winner = 1;
@@ -111,6 +115,7 @@ function checkWinner() {
   })
   turn += 1;
   render();
+}
 }
 
 // Main render function
