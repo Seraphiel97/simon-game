@@ -28,8 +28,10 @@ const submitBtn = document.getElementById('submit');
 const compCircle = document.getElementById('computer');
 const choicesNodeList = document.getElementsByClassName('choice');
 const choicesArray = Array.from(choicesNodeList);
-const resultMessage = document.querySelector('h3')
-const playerBtnContainer = document.getElementById('player-buttons')
+const resultMessage = document.querySelector('h3');
+const playerBtnContainer = document.getElementById('player-buttons');
+const bubblesNodeList = document.getElementById('player-bubbles');
+const bubblesArray = Array.from(bubblesNodeList);
 
   /*----- event listeners -----*/
 // Create an event listener for the play button
@@ -75,8 +77,10 @@ function beginGame() {
   initialize()
   makeCorrectPattern();
   showCorrectPattern();
-  turn += 1;
-  render();
+  setTimeout(() => {
+    turn += 1;
+    render();
+  }, 5000)
 }
 
 // Function that updates the array holding the player's choices
