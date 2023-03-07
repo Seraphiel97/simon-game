@@ -47,12 +47,13 @@ initialize();
 // Function that initializes/resets the game 
 function initialize() {
   turn = 0;
+  correctPattern = [];
+  playerPattern = [];
   render();
 }
 
 // Function that creates a pattern stored in the correct pattern variable
 function makeCorrectPattern() {
-  correctPattern = [];
   for (let i = 0; i < 5; i++) {
     correctPattern.push(Math.floor(Math.random() * 5));
   }
@@ -79,8 +80,18 @@ function beginGame() {
 }
 
 // Function that updates the array holding the player's choices
-function playerSelect() {
-  playerPattern.push()
+function playerSelect(evt) {
+  if (evt.target.innerText === 'Blue') {
+    playerPattern.push(0);
+  } else if (evt.target.innerText === 'Green') {
+    playerPattern.push(1);
+  } else if (evt.target.innerText === 'Orange') {
+    playerPattern.push(2);
+  } else if (evt.target.innerText === 'Pink') {
+    playerPattern.push(3);
+  } else if (evt.target.innerText === 'Red') {
+    playerPattern.push(4);
+  }
   render();
 }
 
@@ -88,9 +99,10 @@ function playerSelect() {
 function checkWinner() {
   if (playerPattern === correctPattern) {
     winner = 1;
-  } else if (playerPatter !== correctPattern) {
+  } else if (playerPattern !== correctPattern) {
     winner = -1;
   }
+  turn += 1;
   render();
 }
 
@@ -107,7 +119,6 @@ function renderBoard() {
     choice.style.borderStyle = 'solid';
     choice.style.borderColor = colors[idx];
   })
-  
 };
 // Render controls function
 function renderControls() {
@@ -122,6 +133,7 @@ if (turn === 0) {
   choicesArray.forEach((choice) => choice.style.visibility = 'visible');
 } else if (turn === 2) {
   playBtn.style.visibility = 'hidden';
+  submitBtn.style.visibility = 'hidden';
   restartBtn.style.visibility = 'visible';
 };
 }
