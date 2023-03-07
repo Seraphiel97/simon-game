@@ -57,6 +57,10 @@ section#player-bubbles > div {
     width: 20vmin;
 }
 
+#submit {
+    height: 5vmin;
+    width: 20vmin;
+}
 #restart {
     height: 5vmin;
     width: 20vmin;

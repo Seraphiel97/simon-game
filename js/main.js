@@ -18,25 +18,32 @@ let playerPattern;
 // Winner variable set to null
 let winner;
 
-// Variable to determine which part of the game the player is experiencing (0-play has not begun, 1-the computer creates and shows the pattern, 2-the player selects choices, 3-player solution is tested)
+// Variable to determine which part of the game the player is experiencing (0-play has not begun, 1-the computer creates and shows the pattern; the player selects choices, 2-player solution is tested)
 let turn;
 
   /*----- cached elements  -----*/
-const play = document.getElementById('play');
-const restart = document.getElementById('restart');
+const playBtn = document.getElementById('play');
+const restartBtn = document.getElementById('restart');
+const submitBtn = document.getElementById('submit');
 const compCircle = document.getElementById('computer');
 const choicesNodeList = document.getElementsByClassName('choice');
 const choicesArray = Array.from(choicesNodeList);
+const resultMessage = document.querySelector('h3')
+const playerBtnContainer = document.getElementById('player-buttons')
 
   /*----- event listeners -----*/
 // Create an event listener for the play button
-play.addEventListener('click', beginGame);
+playBtn.addEventListener('click', beginGame);
 // Create an event listener for the play again/reset button
-restart.addEventListener('click', beginGame);
+restartBtn.addEventListener('click', beginGame);
 // Create an event listener for the buttons that allow the player to select a color pattern
+playerBtnContainer.addEventListener('click', playerSelect);
+//Create an event listener to check the correct solution versus the player's solution
+submitBtn.addEventListener('click', checkWinner);
 
   /*----- functions -----*/
 initialize();
+
 // Function that initializes/resets the game 
 function initialize() {
   turn = 0;
@@ -70,10 +77,17 @@ function beginGame() {
 }
 
 // Function that updates the array holding the player's choices
+function playerSelect() {
+
+}
 
 // Function that compares the master pattern and player choices and declares a winner
-
-
+function checkWinner() {
+  if (playerPattern === correctPattern) {
+    winner = 1;
+  } else if (playerPatter !== correctPattern)
+    winner = -1;
+}
 
 // Main render function
 function render() {
@@ -92,18 +106,26 @@ function renderBoard() {
 // Render controls function
 function renderControls() {
 if (turn === 0) {
-  play.style.visibility = 'visible';
-  restart.style.visibility = 'hidden';
+  playBtn.style.visibility = 'visible';
+  restartBtn.style.visibility = 'hidden';
+  submitBtn.style.visibility = 'hidden';
   choicesArray.forEach((choice) => choice.style.visibility = 'hidden');
 } else if (turn === 1) {
-  play.style.visibility = 'hidden';
+  playBtn.style.visibility = 'hidden';
+  submitBtn.style.visibility = 'visible';
   choicesArray.forEach((choice) => choice.style.visibility = 'visible');
 } else if (turn === 2) {
-  play.style.visibility = 'hidden';
-  restart.style.visibility = 'visible';
+  playBtn.style.visibility = 'hidden';
+  restartBtn.style.visibility = 'visible';
 };
 }
 // Render message function
 function renderMessage() {
-
+if (winner === null) {
+  return;
+} else if (winner === 1) {
+  resultMessage.innerText = 'Congratulations! Your brain is closer to perfection than most!'
+} else if (winner === -1) {
+  resultMessage.innerText = 'Oh no! Your pattern recognition seems to be malfunctioning! Please try again!'
+}
 };
