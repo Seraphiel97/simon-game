@@ -30,7 +30,7 @@ const choicesNodeList = document.getElementsByClassName('choice');
 const choicesArray = Array.from(choicesNodeList);
 const resultMessage = document.querySelector('h3');
 const playerBtnContainer = document.getElementById('player-buttons');
-const bubblesNodeList = document.getElementById('player-bubbles');
+const bubblesNodeList = document.getElementsByClassName('player-bubble');
 const bubblesArray = Array.from(bubblesNodeList);
 
   /*----- event listeners -----*/
@@ -51,6 +51,7 @@ function initialize() {
   turn = 0;
   correctPattern = [];
   playerPattern = [];
+  winner = null;
   render();
 }
 
@@ -99,13 +100,15 @@ function playerSelect(evt) {
   render();
 }
 
-// Function that compares the master pattern and player choices and declares a winner
+// Function that compares the correct pattern and player choices and declares a winner
 function checkWinner() {
-  if (playerPattern === correctPattern) {
-    winner = 1;
-  } else if (playerPattern !== correctPattern) {
-    winner = -1;
-  }
+  playerPattern.forEach((num, idx) => {
+    if (num === correctPattern[idx]) {
+      winner = 1;
+    } else {
+      winner = -1;
+    }
+  })
   turn += 1;
   render();
 }
@@ -123,10 +126,14 @@ function renderBoard() {
     choice.style.borderStyle = 'solid';
     choice.style.borderColor = colors[idx];
   })
+  bubblesArray.forEach((bubble, idx) => {
+    bubble.style.backgroundColor = colors[playerPattern[idx]];
+})
 };
+
 // Render controls function
 function renderControls() {
-if (turn === 0) {
+  if (turn === 0) {
   playBtn.style.visibility = 'visible';
   restartBtn.style.visibility = 'hidden';
   submitBtn.style.visibility = 'hidden';
@@ -139,12 +146,13 @@ if (turn === 0) {
   playBtn.style.visibility = 'hidden';
   submitBtn.style.visibility = 'hidden';
   restartBtn.style.visibility = 'visible';
-};
 }
+}
+
 // Render message function
 function renderMessage() {
 if (winner === null) {
-  return;
+  resultMessage.innerText = '';
 } else if (winner === 1) {
   resultMessage.innerText = 'Congratulations! Your brain is closer to perfection than most!'
 } else if (winner === -1) {
