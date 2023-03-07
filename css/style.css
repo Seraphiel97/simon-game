@@ -26,7 +26,9 @@ div {
 }
 
 button {
+    border-width: .75vmin;
     background-color: white;
+    border-radius: 12px;
 }
 
 #computer {
@@ -52,7 +54,7 @@ section.player-bubbles > div {
 }
 
 #player-buttons > button {
-    margin: 2vmin;
+    margin: 2vmin 0 0 0;
     height: 5vmin;
     width: 15vmin;
 }
@@ -62,11 +64,17 @@ section.player-bubbles > div {
     width: 20vmin;
 }
 
-#submit {
+#data-manipulation{
+    display: inline-flex;
     height: 5vmin;
     width: 20vmin;
 }
+
 #restart {
     height: 5vmin;
     width: 20vmin;
+}
+
+button:hover {
+    border-width: 1vmin;
 }

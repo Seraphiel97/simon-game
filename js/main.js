@@ -32,6 +32,7 @@ const resultMessage = document.querySelector('h3');
 const playerBtnContainer = document.getElementById('player-buttons');
 const bubblesNodeList = document.getElementsByClassName('player-bubble');
 const bubblesArray = Array.from(bubblesNodeList);
+const undoBtn = document.getElementById('undo');
 
   /*----- event listeners -----*/
 // Create an event listener for the play button
@@ -42,6 +43,8 @@ restartBtn.addEventListener('click', beginGame);
 playerBtnContainer.addEventListener('click', playerSelect);
 //Create an event listener to check the correct solution versus the player's solution
 submitBtn.addEventListener('click', checkWinner);
+
+undoBtn.addEventListener('click', removeLastChoice);
 
   /*----- functions -----*/
 initialize();
@@ -101,6 +104,11 @@ function playerSelect(evt) {
   render();
 }
 
+function removeLastChoice() {
+  playerPattern.pop();
+  render();
+}
+
 // Function that compares the correct pattern and player choices and declares a winner
 function checkWinner() {
   if (playerPattern.length < 5) {
@@ -142,14 +150,17 @@ function renderControls() {
   playBtn.style.visibility = 'visible';
   restartBtn.style.visibility = 'hidden';
   submitBtn.style.visibility = 'hidden';
+  undoBtn.style.visibility = 'hidden';
   choicesArray.forEach((choice) => choice.style.visibility = 'hidden');
 } else if (turn === 1) {
   playBtn.style.visibility = 'hidden';
   submitBtn.style.visibility = 'visible';
+  undoBtn.style.visibility = 'visible';
   choicesArray.forEach((choice) => choice.style.visibility = 'visible');
 } else if (turn === 2) {
   playBtn.style.visibility = 'hidden';
   submitBtn.style.visibility = 'hidden';
+  undoBtn.style.visibility = 'hidden';
   restartBtn.style.visibility = 'visible';
 }
 }
