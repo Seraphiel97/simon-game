@@ -7,20 +7,15 @@ const colors = {
   3: '#F3B0C3',
   4: '#b40839',
 };
-
   /*----- state variables -----*/
 // Variable(array) to hold the master pattern
 let correctPattern;
-
 // Variable(array) to hold the player's pattern
 let playerPattern;
-
 // Winner variable set to null
 let winner;
-
 // Variable to determine which part of the game the player is experiencing (0-play has not begun, 1-the computer creates and shows the pattern; the player selects choices, 2-player solution is tested)
 let turn;
-
   /*----- cached elements  -----*/
 const playBtn = document.getElementById('play');
 const submitBtn = document.getElementById('submit');
@@ -32,22 +27,18 @@ const playerBtnContainer = document.getElementById('player-buttons');
 const bubblesNodeList = document.getElementsByClassName('player-bubble');
 const bubblesArray = Array.from(bubblesNodeList);
 const undoBtn = document.getElementById('undo');
-
   /*----- event listeners -----*/
 // Event listener for the play button
 playBtn.addEventListener('click', beginGame);
-
 // Event listener for the buttons that allow the player to select a color pattern
 playerBtnContainer.addEventListener('click', playerSelect);
 // Event listener to check the correct solution versus the player's solution
 submitBtn.addEventListener('click', checkWinner);
-
 // Event listner that removes the last choice the player made
 undoBtn.addEventListener('click', removeLastChoice);
 
   /*----- functions -----*/
 initialize();
-
 // Function that initializes/resets the game 
 function initialize() {
   turn = 0;
@@ -57,14 +48,12 @@ function initialize() {
   bubblesArray.forEach((bubble) => bubble.style.backgroundColor = 'white');
   render();
 }
-
 // Function that creates a pattern stored in the correct pattern variable
 function makeCorrectPattern() {
   for (let i = 0; i < 5; i++) {
     correctPattern.push(Math.floor(Math.random() * 5));
   }
 }
-
 // Function that iterates through the array, showing the colors to the player
 function showCorrectPattern() {
   correctPattern.forEach((num, idx) => {
@@ -75,7 +64,6 @@ function showCorrectPattern() {
   })
   setTimeout(() => compCircle.style.backgroundColor = 'white', 5000);
 }
-
 //Callback function that begins the game and resets when invoked
 function beginGame() {
   initialize()
@@ -86,7 +74,6 @@ function beginGame() {
     render();
   }, 5000)
 }
-
 // Function that updates the array holding the player's choices
 function playerSelect(evt) {
   if (evt.target.innerText === 'Blue') {
@@ -102,13 +89,11 @@ function playerSelect(evt) {
   }
   render();
 }
-
 // Function that removes the most recent player choice from playerPattern
 function removeLastChoice() {
   playerPattern.pop();
   render();
 }
-
 // Function that compares the correct pattern and player choices and declares a winner
 function checkWinner() {
   if (playerPattern.length < 5) {
@@ -125,7 +110,6 @@ function checkWinner() {
   render();
 }
 }
-
 // Main render function
 function render() {
   renderBoard();
@@ -143,7 +127,6 @@ function renderBoard() {
     bubble.style.backgroundColor = colors[playerPattern[idx]];
 })
 };
-
 // Render controls function
 function renderControls() {
   if (turn === 0) {
@@ -162,7 +145,6 @@ function renderControls() {
   undoBtn.style.visibility = 'hidden';
 }
 }
-
 // Render message function
 function renderMessage() {
 if (winner === null) {
@@ -170,6 +152,6 @@ if (winner === null) {
 } else if (winner === 1) {
   resultMessage.innerText = 'Congratulations! Your brain is closer to perfection than most!'
 } else if (winner === -1) {
-  resultMessage.innerText = 'Oh no! Your pattern recognition seems to be malfunctioning! Please try again!'
+  resultMessage.innerText = "Hmmmmm, your response doesn't seem to be quite what I had hoped! Please try again!"
 }
 };
