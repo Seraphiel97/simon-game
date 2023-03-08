@@ -120,7 +120,7 @@ function calculateWinPercentage() {
   } else if (winner === -1) {
     totalGames +=1;
   }
-  winPercentage = ((totalWins / totalGames) * 100)
+  winPercentage = (Math.round((totalWins / totalGames) * 100))
 }
 // Function that resets the win percentage
 function resetWinPercentage() {
