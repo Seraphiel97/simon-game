@@ -18,6 +18,8 @@ let winner;
 let turn;
 // Variable that holds the value of the player's success rate
 let winPercentage;
+let totalWins = 0;
+let totalGames = 0;
   /*----- cached elements  -----*/
 const playBtn = document.getElementById('play');
 const submitBtn = document.getElementById('submit');
@@ -29,6 +31,7 @@ const playerBtnContainer = document.getElementById('player-buttons');
 const bubblesNodeList = document.getElementsByClassName('player-bubble');
 const bubblesArray = Array.from(bubblesNodeList);
 const resetBtn = document.getElementById('reset');
+const successRate = document.getElementById('success-rate')
   /*----- event listeners -----*/
 // Event listener for the play button
 playBtn.addEventListener('click', beginGame);
@@ -105,12 +108,25 @@ function checkWinner() {
     }
   })
   turn += 1;
+  calculateWinPercentage();
   render();
 }
+}
+// Function that determines win percentage
+function calculateWinPercentage() {
+  if (winner === 1) {
+    totalWins += 1;
+    totalGames += 1;
+  } else if (winner === -1) {
+    totalGames +=1;
+  }
+  winPercentage = ((totalWins / totalGames) * 100)
 }
 // Function that resets the win percentage
 function resetWinPercentage() {
   winPercentage = null;
+  totalGames = 0;
+  totalWins = 0;
   initialize();
 }
 // Main render function
@@ -160,4 +176,9 @@ function renderMessage() {
 } else if (winner === -1) {
   resultMessage.innerText = "Hmmmmm, my algorithm expected an alternative response, Please try again!"
 }
+  if (winPercentage) {
+    successRate.innerText = `Success Rate: ${winPercentage}%`
+  } else {
+    successRate.innerText = '';
+  }
 };
