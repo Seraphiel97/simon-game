@@ -11,10 +11,11 @@ body {
     justify-content: center;
     font-family: 'Tilt Neon', cursive;
     text-align: center;
+    background-color: rgba(223, 217, 217, 0.808);
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 
 h5{
@@ -40,7 +41,8 @@ button {
     margin: 2vmin auto;
     text-align: center;
     padding: 4rem;
-    color: white
+    color: white;
+    background-color: white;
 }
 
 section.player-bubbles > div {
@@ -69,6 +71,7 @@ section.player-bubbles > div {
     display: inline-flex;
     height: 5vmin;
     width: 20vmin;
+    margin: 0;
 }
 
 button:hover {

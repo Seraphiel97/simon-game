@@ -23,7 +23,6 @@ let turn;
 
   /*----- cached elements  -----*/
 const playBtn = document.getElementById('play');
-const restartBtn = document.getElementById('restart');
 const submitBtn = document.getElementById('submit');
 const compCircle = document.getElementById('computer');
 const choicesNodeList = document.getElementsByClassName('choice');
@@ -35,15 +34,15 @@ const bubblesArray = Array.from(bubblesNodeList);
 const undoBtn = document.getElementById('undo');
 
   /*----- event listeners -----*/
-// Create an event listener for the play button
+// Event listener for the play button
 playBtn.addEventListener('click', beginGame);
-// Create an event listener for the play again/reset button
 
-// Create an event listener for the buttons that allow the player to select a color pattern
+// Event listener for the buttons that allow the player to select a color pattern
 playerBtnContainer.addEventListener('click', playerSelect);
-//Create an event listener to check the correct solution versus the player's solution
+// Event listener to check the correct solution versus the player's solution
 submitBtn.addEventListener('click', checkWinner);
 
+// Event listner that removes the last choice the player made
 undoBtn.addEventListener('click', removeLastChoice);
 
   /*----- functions -----*/
