@@ -48,8 +48,8 @@ function initialize() {
   turn = 0;
   correctPattern = [];
   playerPattern = [];
-  winner = null;
-  bubblesArray.forEach((bubble) => bubble.style.backgroundColor = 'white');
+  winner = 0;
+  // bubblesArray.forEach((bubble) => bubble.style.backgroundColor = 'white');
   render();
 }
 // Function that creates a pattern stored in the correct pattern variable
@@ -100,24 +100,22 @@ function checkWinner() {
   if (playerPattern.length < 5) {
     return
   } else {
-  playerPattern.forEach((num, idx) => {
-    if (num === correctPattern[idx]) {
-      winner = 1;
-    } else {
-      winner = -1;
+  for (let i = 0; i < 5; i++) {
+    if (playerPattern[i] === correctPattern[i]) {
+      winner += 0.2;
     }
-  })
+  }
+}
   turn += 1;
   calculateWinPercentage();
   render();
-}
 }
 // Function that determines win percentage
 function calculateWinPercentage() {
   if (winner === 1) {
     totalWins += 1;
     totalGames += 1;
-  } else if (winner === -1) {
+  } else if (winner < 1) {
     totalGames +=1;
   }
   winPercentage = (Math.round((totalWins / totalGames) * 100))
@@ -142,6 +140,7 @@ function renderBoard() {
     choice.style.borderStyle = 'solid';
     choice.style.borderColor = colors[idx];
   })
+  bubblesArray.forEach((bubble) => bubble.style.backgroundColor = 'white');
   bubblesArray.forEach((bubble, idx) => {
     bubble.style.backgroundColor = colors[playerPattern[idx]];
 })
@@ -166,14 +165,16 @@ function renderControls() {
 }
 // Render message function
 function renderMessage() {
+  if (winner === 0 && turn === 0) {
   resultMessage.innerHTML = '<h4>Hello, my name is S.I.M.O.N. Please examine the color of the large circle below very carefully.<br> My pattern recognition software seeks to determine your mental acuity in remembering sequences. <br>When the color cycle is complete, you will recreate the pattern yourself in the space provided. Press play to begin!</h4>'
-  if (winner === null && turn > 0) {
+  }
+  if (winner === 0 && turn > 0) {
   resultMessage.innerText = 'Awaiting Test Results...';
   resultMessage.style.fontSize = '1.5rem'
 } else if (winner === 1) {
   resultMessage.innerText = 'Congratulations! Your brain is closer to perfection than most!'
   resultMessage.style.fontSize = '1rem';
-} else if (winner === -1) {
+} else if (winner < 1 && turn === 3) {
   resultMessage.innerText = "Hmmmmm, my algorithm expected an alternative response, Please try again!"
 }
   if (winPercentage) {
