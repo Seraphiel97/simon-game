@@ -24,7 +24,7 @@ const submitBtn = document.getElementById('submit');
 const compCircle = document.getElementById('computer');
 const choicesNodeList = document.getElementsByClassName('choice');
 const choicesArray = Array.from(choicesNodeList);
-const resultMessage = document.querySelector('h3');
+const resultMessage = document.querySelector('h4');
 const playerBtnContainer = document.getElementById('player-buttons');
 const bubblesNodeList = document.getElementsByClassName('player-bubble');
 const bubblesArray = Array.from(bubblesNodeList);
@@ -140,10 +140,8 @@ function renderControls() {
 } else if (turn === 1) {
   playBtn.style.visibility = 'hidden';
 } else if (turn === 2) {
-  playBtn.style.visibility = 'hidden';
   submitBtn.style.visibility = 'visible';
   choicesArray.forEach((choice) => choice.style.visibility = 'visible');
-  resetBtn.style.visibility = 'hidden';
 } else if (turn === 3) {
   playBtn.style.visibility = 'visible';
   submitBtn.style.visibility = 'hidden';
@@ -152,11 +150,14 @@ function renderControls() {
 }
 // Render message function
 function renderMessage() {
-if (winner === null) {
-  resultMessage.innerText = '';
+  resultMessage.innerHTML = '<h4>Hello, my name is S.I.M.O.N. Please examine the color of the large circle below very carefully.<br> My pattern recognition software seeks to determine your mental acuity in remembering sequences. <br>When the color cycle is complete, you will recreate the pattern yourself in the space provided. Press play to begin!</h4>'
+  if (winner === null && turn > 0) {
+  resultMessage.innerText = 'Awaiting Test Results...';
+  resultMessage.style.fontSize = '1.5rem'
 } else if (winner === 1) {
   resultMessage.innerText = 'Congratulations! Your brain is closer to perfection than most!'
+  resultMessage.style.fontSize = '1rem';
 } else if (winner === -1) {
-  resultMessage.innerText = "Hmmmmm, your response doesn't seem to be quite what I had hoped! Please try again!"
+  resultMessage.innerText = "Hmmmmm, my algorithm expected an alternative response, Please try again!"
 }
 };
