@@ -19,7 +19,7 @@ h1 {
 }
 
 h5{
-    font-size: 1rem;
+    font-size: .90rem;
 }
 
 div {
@@ -71,6 +71,11 @@ section.player-bubbles > div {
     height: 5vmin;
     width: 20vmin;
     margin: 0;
+}
+
+#reset {
+    height: 5vmin;
+    width: 20vmin;
 }
 
 button:hover {

@@ -16,6 +16,8 @@ let playerPattern;
 let winner;
 // Variable to determine which part of the game the player is experiencing (0-play has not begun, 1-the computer creates and shows the pattern; the player selects choices, 2-player solution is tested)
 let turn;
+// Variable that holds the value of the player's success rate
+let winPercentage;
   /*----- cached elements  -----*/
 const playBtn = document.getElementById('play');
 const submitBtn = document.getElementById('submit');
@@ -26,6 +28,7 @@ const resultMessage = document.querySelector('h3');
 const playerBtnContainer = document.getElementById('player-buttons');
 const bubblesNodeList = document.getElementsByClassName('player-bubble');
 const bubblesArray = Array.from(bubblesNodeList);
+const resetBtn = document.getElementById('reset');
   /*----- event listeners -----*/
 // Event listener for the play button
 playBtn.addEventListener('click', beginGame);
@@ -33,7 +36,8 @@ playBtn.addEventListener('click', beginGame);
 playerBtnContainer.addEventListener('click', playerSelect);
 // Event listener to check the correct solution versus the player's solution
 submitBtn.addEventListener('click', checkWinner);
-
+// Event listener to reset the game for a new player/sets winPercentage to 0
+resetBtn.addEventListener('click', resetWinPercentage)
   /*----- functions -----*/
 initialize();
 // Function that initializes/resets the game 
@@ -66,6 +70,8 @@ function beginGame() {
   initialize()
   makeCorrectPattern();
   showCorrectPattern();
+  turn += 1;
+  render();
   setTimeout(() => {
     turn += 1;
     render();
@@ -102,6 +108,11 @@ function checkWinner() {
   render();
 }
 }
+// Function that resets the win percentage
+function resetWinPercentage() {
+  winPercentage = null;
+  initialize();
+}
 // Main render function
 function render() {
   renderBoard();
@@ -125,13 +136,18 @@ function renderControls() {
   playBtn.style.visibility = 'visible';
   submitBtn.style.visibility = 'hidden';
   choicesArray.forEach((choice) => choice.style.visibility = 'hidden');
+  resetBtn.style.visibility = 'hidden';
 } else if (turn === 1) {
+  playBtn.style.visibility = 'hidden';
+} else if (turn === 2) {
   playBtn.style.visibility = 'hidden';
   submitBtn.style.visibility = 'visible';
   choicesArray.forEach((choice) => choice.style.visibility = 'visible');
-} else if (turn === 2) {
+  resetBtn.style.visibility = 'hidden';
+} else if (turn === 3) {
   playBtn.style.visibility = 'visible';
   submitBtn.style.visibility = 'hidden';
+  resetBtn.style.visibility = 'visible';
 }
 }
 // Render message function
