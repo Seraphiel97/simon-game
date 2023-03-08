@@ -67,8 +67,7 @@ section.player-bubbles > div {
     width: 20vmin;
 }
 
-#data-manipulation { 
-    display: inline-flex;
+#submit { 
     height: 5vmin;
     width: 20vmin;
     margin: 0;
