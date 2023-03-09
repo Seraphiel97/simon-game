@@ -170,14 +170,15 @@ function renderMessage() {
   }
   if (winner === 0 && turn > 0) {
   resultMessage.innerText = 'Awaiting Test Results...';
-  resultMessage.style.fontSize = '1.5rem'
+  resultMessage.style.fontSize = '2rem'
 } else if (winner === 1) {
   resultMessage.innerText = 'Congratulations! Your brain is closer to perfection than most!'
-  resultMessage.style.fontSize = '1rem';
+  resultMessage.style.fontSize = '2rem';
 } else if (winner < 1 && turn === 3) {
-  resultMessage.innerText = "Hmmmmm, my algorithm expected an alternative response, Please try again!"
+  resultMessage.innerText = "Hmmmmm, that isn't quite right. Please try again!"
+  resultMessage.style.fontSize = '2rem';
 }
-  if (winPercentage) {
+  if (winPercentage >= 0 && winPercentage !== null) {
     successRate.innerText = `Success Rate: ${winPercentage}%`
   } else {
     successRate.innerText = '';
