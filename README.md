@@ -8,11 +8,24 @@
 ![MAC-img](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)
 ***
 ## Game Overview:
+![gameplay](https://github.com/Seraphiel97/simon-game/blob/main/images/simon-gameplay.gif?raw=true)
 
 Welcome to the future! In this game, an artificial intelligence named ___S.I.M.O.N.___(Super Intelligence Mapping Our Neuroanatomy) creates a sequence of colors designed to test the user's pattern recognition and short-term memory. Once the correct pattern has been revealed, the player must correctly recreate the sequence using the controls provided. As it is human nature to make mistakes, feel free to play the game more than once so the AI can accurately track your successes.
-![gameplay](https://github.com/Seraphiel97/simon-game/blob/main/images/simon-gameplay.gif?raw=true)
+
 
 ***
 
 ## Getting Started:
 
+![startup-screen](https://github.com/Seraphiel97/simon-game/blob/main/images/simon-startup-screen.png?raw=true)
+
+[Play S.I.M.O.N.]()
+
+[View Demo]()
+
+***
+
+## Next Steps:
+1. Implement iterative increasing difficulty feature
+2. Create color themes for player selection
+3. Stylistically alter the player bubbles to better match the AI theme of the game
