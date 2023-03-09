@@ -49,7 +49,6 @@ function initialize() {
   correctPattern = [];
   playerPattern = [];
   winner = 0;
-  // bubblesArray.forEach((bubble) => bubble.style.backgroundColor = 'white');
   render();
 }
 // Function that creates a pattern stored in the correct pattern variable
