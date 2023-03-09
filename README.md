@@ -1,5 +1,9 @@
 # S.I.M.O.N.
 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+![Maintainer](https://img.shields.io/badge/maintainer-Seraphiel97-blue)
+
+
 ## Game Overview:
 ![gameplay](https://github.com/Seraphiel97/simon-game/blob/main/images/simon-gameplay.gif?raw=true)
 
