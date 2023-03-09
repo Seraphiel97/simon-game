@@ -21,7 +21,7 @@ Welcome to the future! In this game, an artificial intelligence named ___S.I.M.O
 
 [Play S.I.M.O.N.]()
 
-[View Demo]()
+[View Demo](https://github.com/Seraphiel97/simon-game/blob/main/video/simon-demo.mov?raw=true)
 
 ***
 
