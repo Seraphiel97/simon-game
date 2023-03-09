@@ -6,3 +6,9 @@
 ![MD-img](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
 ![GIT-img](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![MAC-img](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)
+***
+## Game Overview:
+
+Welcome to the future! In this game, an artificial intelligence named _S.I.M.O.N._(Super Intelligence Mapping Our Neuropathways) creates a sequence of colors designed to test the user's pattern recognition and short-term memory. Once the correct pattern has been revealed, the player must correctly recreate the sequence using the buttons provided. As it is human nature to make mistakes, feel free to play the game more than once so the AI can accurately track your successes.
+
+
