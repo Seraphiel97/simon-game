@@ -102,10 +102,11 @@ function checkWinner() {
   } else {
   for (let i = 0; i < 5; i++) {
     if (playerPattern[i] === correctPattern[i]) {
-      winner += 0.2;
+      winner += 0.1;
     }
   }
 }
+  winner += 0.5;
   turn += 1;
   calculateWinPercentage();
   render();
@@ -171,7 +172,7 @@ function renderMessage() {
   if (winner === 0 && turn > 0) {
   resultMessage.innerText = 'Awaiting Test Results...';
   resultMessage.style.fontSize = '2rem'
-} else if (winner === 1) {
+} else if (winner === 1 && turn === 3) {
   resultMessage.innerText = 'Congratulations! Your brain is closer to perfection than most!'
   resultMessage.style.fontSize = '2rem';
 } else if (winner < 1 && turn === 3) {
