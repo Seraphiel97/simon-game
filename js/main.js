@@ -23,6 +23,7 @@ let totalGames = 0;
   /*----- cached elements  -----*/
 const playBtn = document.getElementById('play');
 const submitBtn = document.getElementById('submit');
+const undoBtn = document.getElementById('undo');
 const compCircle = document.getElementById('computer');
 const choicesNodeList = document.getElementsByClassName('choice');
 const choicesArray = Array.from(choicesNodeList);
@@ -39,6 +40,8 @@ playBtn.addEventListener('click', beginGame);
 playerBtnContainer.addEventListener('click', playerSelect);
 // Event listener to check the correct solution versus the player's solution
 submitBtn.addEventListener('click', checkWinner);
+// Event listener that allows the player to remove their last choice
+undoBtn.addEventListener('click', removeChoice);
 // Event listener to reset the game for a new player/sets winPercentage to 0
 resetBtn.addEventListener('click', resetWinPercentage)
   /*----- functions -----*/
@@ -110,6 +113,11 @@ function checkWinner() {
   calculateWinPercentage();
   render();
 }
+// Function that removes the player's last choice
+function removeChoice() {
+  playerPattern.pop();
+  render();
+}
 // Function that determines win percentage
 function calculateWinPercentage() {
   if (winner === 1) {
@@ -150,16 +158,19 @@ function renderControls() {
   if (turn === 0) {
   playBtn.style.visibility = 'visible';
   submitBtn.style.visibility = 'hidden';
+  undoBtn.style.visibility = 'hidden';
   choicesArray.forEach((choice) => choice.style.visibility = 'hidden');
   resetBtn.style.visibility = 'hidden';
 } else if (turn === 1) {
   playBtn.style.visibility = 'hidden';
 } else if (turn === 2) {
   submitBtn.style.visibility = 'visible';
+  undoBtn.style.visibility = 'visible';
   choicesArray.forEach((choice) => choice.style.visibility = 'visible');
 } else if (turn === 3) {
   playBtn.style.visibility = 'visible';
   submitBtn.style.visibility = 'hidden';
+  undoBtn.style.visibility = 'hidden';
   resetBtn.style.visibility = 'visible';
 }
 }

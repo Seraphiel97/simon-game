@@ -73,6 +73,12 @@ section.player-bubbles > div {
     margin: 0;
 }
 
+#undo {
+    height: 5vmin;
+    width: 20vmin;
+    margin: 0;
+}
+
 #reset {
     height: 5vmin;
     width: 20vmin;
