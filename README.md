@@ -12,7 +12,7 @@ __Welcome to the future!__ In this game, an artificial intelligence named ___S.I
 
 ![startup-screen](https://github.com/Seraphiel97/simon-game/blob/main/images/simon-startup-screen.png?raw=true)
 
-[Play S.I.M.O.N.]()
+[Play S.I.M.O.N.](https://seraphiel97.github.io/simon-game/)
 
 ***
 
