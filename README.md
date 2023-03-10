@@ -5,7 +5,7 @@
 
 
 ## Game Overview:
-![gameplay](https://github.com/Seraphiel97/simon-game/blob/main/images/simon-gameplay.gif?raw=true)
+![gameplay](https://raw.githubusercontent.com/Seraphiel97/simon-game/37706e535bf2fcb0381e8f698c25e5571807d09e/images/simon-demo.gif)
 
 __Welcome to the future!__ In this game, an artificial intelligence named ___S.I.M.O.N.___(Super Intelligence Mapping Our Neuroanatomy) creates a sequence of colors designed to test the user's pattern recognition and short-term memory. Once the correct pattern has been revealed, the player must correctly recreate the sequence using the controls provided. As it is human nature to make mistakes, feel free to __play the game more than once__ so the AI can accurately track your successes.
 
