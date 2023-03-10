@@ -14,11 +14,13 @@ let correctPattern;
 let playerPattern;
 // Winner variable set to null
 let winner;
-// Variable to determine which part of the game the player is experiencing (0-play has not begun, 1-the computer creates and shows the pattern; the player selects choices, 2-player solution is tested)
+// Variable to determine which part of the game the player is experiencing (0-play has not begun, 1-the computer creates and shows the pattern, 2-the player selects choices, 3-player solution is tested)
 let turn;
 // Variable that holds the value of the player's success rate
 let winPercentage;
+// Variable that tracks the number of wins across games
 let totalWins = 0;
+// Variable that tracks total number of games played
 let totalGames = 0;
   /*----- cached elements  -----*/
 const playBtn = document.getElementById('play');

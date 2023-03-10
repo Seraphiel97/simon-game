@@ -53,3 +53,4 @@ function calculateWinPercentage() {
 1. Implement iterative increasing difficulty feature
 2. Create color themes for player selection
 3. Stylistically alter the player bubbles to better match the AI theme of the game
+4. Create and randomize the render messages for success and failure
