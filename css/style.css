@@ -56,8 +56,8 @@ section.player-bubbles > div {
 }
 
 #displays {
-    background-color: rgba(255, 255, 255, .75);
-    border-radius: 15%;
+    background-color: rgba(0, 0, 0, .70);
+    border-radius: 4rem;
     margin-top: 1rem;
 }
 
