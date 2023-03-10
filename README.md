@@ -16,7 +16,17 @@ __Welcome to the future!__ In this game, an artificial intelligence named ___S.I
 
 ![startup-screen](https://github.com/Seraphiel97/simon-game/blob/main/images/simon-startup-screen.png?raw=true)
 
-[Play S.I.M.O.N.](https://seraphiel97.github.io/simon-game/)
+1. Begin by opening [S.I.M.O.N.](https://seraphiel97.github.io/simon-game/) in a new tab
+2. Read the instructions at the top of the page and press play
+3. Witness the color sequence in the largest bubble, noting that the changing number indicates the color's place in the pattern
+4. Using the buttons, recreate the sequence you witnessed, which is visualized by the color of the smaller bubbles
+    * The _UNDO_ button removes the last choice you selected and can be used as many times as necessary
+    * Clicking the _SUBMIT_ button __cannot be undone__ because the AI will check your solution immediately
+5. At this point, you will either be congratulated or asked to try again
+
+    * Press _PLAY_ if you wish to play again and track your success rate
+    * If you would prefer to begin the game without your scores from previous games, press _NEW PLAYER_
+
 
 ***
 
