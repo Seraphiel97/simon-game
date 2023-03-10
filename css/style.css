@@ -55,6 +55,12 @@ section.player-bubbles > div {
     margin: 2vmin 4vmin;
 }
 
+#displays {
+    background-color: rgba(255, 255, 255, .75);
+    border-radius: 15%;
+    margin-top: 1rem;
+}
+
 #player-buttons > button {
     margin: 2vmin 0 0 0;
     height: 5vmin;
